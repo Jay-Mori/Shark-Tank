@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dic data</title>
+
+    <style>
+     .card{
+        border: solid 1px ;
+        width: 200px; 
+        margin: 200px;
+     }
+
+     
+    </style>
+
+</head>
+
+<body>
+
+    <div class="card" style=" padding:
+    30px; margin: 10px ; border: solid 1px black; border-radius: 10px;">
+        <h1 style="font-family: sans-serif;" id="title"></h1>
+        <img src="" hieght="130px" width="200px" id="img">
+        <p class="card-category" id="update-pitch-category">Category: </p>
+        <p class="card-founder" id="founder"></p>
+        <h4 id="price"> Price : </h4>
+
+
+        <button class="card-button"> delete </button>
+        <button><a href="#" data-id='${el.id}' class="card-link">Edit</a></button>
+    </div>
+    <script>
+        let alldata = new URLSearchParams(window.location.search);
+      
+        let images = alldata.get("image");
+        console.log(images);
+        let imagesid = document.getElementById("img");
+        imagesid.src = images;
+
+        let titles = alldata.get("title");
+        console.log(titles);
+        let titlesid = document.getElementById("title");
+        titlesid.innerText = titles
+
+        let categorys = alldata.get("category");
+        console.log(categorys);
+        let categaryid = document.getElementById("update-pitch-category");
+        categaryid.innerText = categorys
+  
+        let founders = alldata.get("founder");
+        console.log(founder);
+        let founderid = document.getElementById("founder");
+        founderid.innerText = founders
+
+        let prices = alldata.get("price");
+        console.log(prices);
+        let priceid = document.getElementById("price");
+        priceid.innerText = prices          
+
+    </script>
+
+</body>
+
+</html>
